@@ -12,36 +12,23 @@
 
 ## Training
 
-**Our code is based on** [Bunny](https://github.com/BAAI-DCAI/Bunny).
+**Our code is based on** [Bunny](https://github.com/BAAI-DCAI/Bunny). Thanks!
 
 ### Env
 
 Create a conda virtual environment and activate it:
 
   ```shell
-  conda create -n bunny python=3.10
-  conda activate bunny
+  conda create -n ReVision python=3.10
+  conda activate ReVision
   ```
 
 Basic requirements
 
   ```shell
-  pip install --upgrade pip  # enable PEP 660 support
-  pip install transformers
-  pip install torch torchvision xformers --index-url https://download.pytorch.org/whl/cu118
-  ```
-
-Install apex
-
-  ```shell
-  # https://github.com/NVIDIA/apex#from-source
-  pip install ninja
-  git clone https://github.com/NVIDIA/apex
-  cd apex
-  # if pip >= 23.1 (ref: https://pip.pypa.io/en/stable/news/#v23-1) which supports multiple `--config-settings` with the same key...
-  pip install -v --disable-pip-version-check --no-cache-dir --no-build-isolation --config-settings "--build-option=--cpp_ext" --config-settings "--build-option=--cuda_ext" ./
-  # otherwise
-  pip install -v --disable-pip-version-check --no-cache-dir --no-build-isolation --global-option="--cpp_ext" --global-option="--cuda_ext" ./
+  pip install --upgrade pip  
+  pip install transformers=4.44.0
+  pip install torch torchvision xformers --index-url https://download.pytorch.org/whl/cu124
   ```
 
 Install flash-attention
@@ -51,15 +38,6 @@ Install flash-attention
   pip install packaging
   pip install flash-attn --no-build-isolation
   ```
-
-Install bunny and other requirements
-
-  ```shell
-  git clone https://github.com/BAAI-DCAI/Bunny.git
-  cd Bunny
-  pip install -e .
-  ```
-
 ### Data
 
 Download the **Unicorn-1.2M** & **Unicorn-Instruction-471K** Datasets. [[HF](https://huggingface.co/datasets/Yu2020/Unicorn)]

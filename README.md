@@ -6,7 +6,8 @@
 
 ## News
 
-- [2025/06/10] 🔥 We release the **training code** of the **Unicorn**. Try training!
+- [2025/06/10] 🔥 We release the **code** of the **ReVision**. Try training!
+- [2025/06/10] 🔥 We release the **code** of the **Unicorn**. Try training!
 - [2025/04/15] 🔥 Release **Unicorn-1.2M** & **Unicorn-Instruction-471K** Datasets. [[HF](https://huggingface.co/datasets/Yu2020/Unicorn)]
 
 ## Training

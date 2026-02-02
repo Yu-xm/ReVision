@@ -8,7 +8,7 @@
   📄 <a href="https://arxiv.org/abs/2503.22655">Paper</a> | 🤗 <a href="https://huggingface.co/datasets/Yu2020/Unicorn">Data</a>
 </p> -->
 
-## News
+# 📢 News
 
 - [2026/02/02] 🏖️ **NOTE:** The author is currently on vacation and will address the remaining To-Do items upon return.
 - [2026/01/30] ✨ We release the **code** of the **ReVision**. Try training!

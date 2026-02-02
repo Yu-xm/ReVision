@@ -94,7 +94,7 @@ Ensure your directory looks similar to this before running:
 
 ```
 
-#### 3. Run Feature Extraction
+#### 3. Run Data Embed 
 
 Run the script to generate embeddings. By default, this script runs **Offline** (using local model paths).
 

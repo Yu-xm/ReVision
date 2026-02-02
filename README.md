@@ -168,7 +168,7 @@ Here is the **Training** section, written to perfectly match the style and conte
 
 # :rocket: Model Training
 
-ReVision training is conducted using the processed embeddings Step 2.
+ReVision training is conducted using the processed embeddings in Step 2.
 
 ### 1. Data Preparation
 
@@ -211,11 +211,7 @@ class LazySupervisedDataset(Dataset):
 
 ### 3. Stage 1: Modality Substitution Pretraining
 
-In this stage, we train the **Projector** (MLP) to align the language model with the synthetic visual embeddings.
-
-```bash
-
-```
+In this stage, we train the projector (MLP) to align the language model with the synthetic visual embeddings.
 
 **Run the command:**
 

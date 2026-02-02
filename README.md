@@ -1,8 +1,6 @@
 # Modality Gap–Driven Subspace Alignment Training Paradigm For Multimodal Large Language Models
 
-<!-- <p align="center">
-  📄 <a href="https://arxiv.org/abs/2503.22655">Paper</a> | 🤗 <a href="https://huggingface.co/datasets/Yu2020/Unicorn">Data</a>
-</p> -->
+<img src="./asset/ReAlign.png" alt="Logo">
 
 # 📢 News
 

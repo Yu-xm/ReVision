@@ -41,40 +41,91 @@ Install flash-attention
   pip install packaging
   pip install flash-attn --no-build-isolation
   ```
+
 # :hammer_and_wrench: Embedding Process
 
 ### Process your own data as follows:
 
 First, prepare separate sets of image and text data (unpaired), formatted as follows:
 
-```
-python image_embed.py
+#### 1. Data Preparation
+Format your `dataset.json` as a dictionary containing two separate lists: `images` and `texts`.
+* **images:** A list of dictionaries, each with an `id` and `image` path.
+* **texts:** A list of dictionaries, each with an `id` and `text` content.
+
+```json
+{
+  "images": [
+    {
+      "id": "img_001",
+      "image": "0001.jpg"
+    },
+    {
+      "id": "img_002",
+      "image": "folder/0002.png"
+    }
+  ],
+  "texts": [
+    {
+      "id": "txt_001",
+      "text": "This is a text sample description."
+    },
+    {
+      "id": "txt_002",
+      "text": "Another independent text entry."
+    }
+  ]
+}
+
 ```
 
-Mean shift to get synthetic image embeddings
+#### 2. Directory Structure
+
+Ensure your directory looks similar to this before running:
+
+```text
+├── data/
+│   ├── images/             # Root folder for images
+│   └── dataset.json        # The JSON index file above
+├── models/
+│   ├── llm2clip-openai/    # Local vision encoder path
+│   └── llm2vec-llama3/     # Local text encoder path
+└── embed.py
 
 ```
-python embed_mean.py
-```
 
-Then, change the embedding path in `data_utils.py`
+#### 3. Run Feature Extraction
 
-```
-folder_path = ''
-```
-Note: the same pkl file is used in both the pretraining and instruction-tuning stages
+Run the script to generate embeddings. By default, this script runs **Offline** (using local model paths).
 
-### Pretrain
-
-```
-sh script/train/pretrain.sh
-```
-
-### Instruction Tuning
+```bash
+python embed.py \
+    --data_json "./data/dataset.json" \
+    --image_root "./data/images" \
+    --output_text_dir "./output/text_feats" \
+    --output_image_dir "./output/image_feats" \
+    --llm2clip_path "/path/to/local/llm2clip-model" \
+    --llm_model_name "/path/to/local/llm2vec-model" \
+    --bsz 512 \
+    --modality both
 
 ```
-sh script/train/finetune_full.sh
+
+**Arguments:**
+
+* `--modality`: Choose `both`, `text`, or `image`.
+* `--bsz`: Batch size (default 1024; reduce to 512 or 256 if OOM occurs).
+* `--online`: Add this flag if you want to allow Hugging Face Hub access.
+
+#### 4. Output
+
+The script saves features in chunked `.pkl` files (default 200k records per file).
+
+* `output/text_feats/text_embeds_1.pkl`
+* `output/image_feats/image_embeds_1.pkl`
+
 ```
+
 
 ## Citation
 If you find this repository helpful, please cite the paper below.

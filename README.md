@@ -1,7 +1,3 @@
-
-
-
-
 # Modality Gap–Driven Subspace Alignment Training Paradigm For Multimodal Large Language Models
 
 <!-- <p align="center">
@@ -123,7 +119,7 @@ The script saves features in chunked `.pkl` files (default 200k records per file
 * `output/image_feats/image_embeds_1.pkl`
 
 
-## ⚖️ Step 2: ReAlign
+## Step 2: ReAlign
 
 After generating the initial embeddings (Step 1), use this script to align the **Text Embeddings** into the **Image Embedding Space**. This process reduces the modality gap using the **ReAlign** method.
 

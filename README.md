@@ -2,6 +2,9 @@
 
 <img src="./asset/ReAlign.png" alt="Logo">
 
+<font size=7><div align='center' > [[📖 Paper](https://github.com/Yu-xm/ReVision.git)] [[📊 Dataset](https://github.com/Yu-xm/ReVision.git)] [[🌐 Model](https://github.com/Yu-xm/ReVision.git)] </div></font>
+
+
 # 📢 News
 
 - [2026/02/02] 🏖️ **NOTE:** The author is currently on a journey and will address the To-Do items upon return.

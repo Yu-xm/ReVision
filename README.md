@@ -169,6 +169,14 @@ The script creates a `trace/` subdirectory inside your output folder.
 
 > **Note:** This script only transforms the **Text** embeddings. The **Image** embeddings remain unchanged as they serve as the "anchor" distribution.
 
+# 📝 To Do
+
+- [ ] Release embedding quality detection code.
+- [ ] Refactor and optimize training code.
+- [ ] Release **ReVision** Pre-training data.
+- [ ] Release **ReVision** SFT data.
+- [ ] Release evaluation benchmarks.
+- [ ] Release **ReVision-8B** model weights.
 
 # 🖊️ Citation
 

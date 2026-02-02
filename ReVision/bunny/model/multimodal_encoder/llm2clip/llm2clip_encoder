@@ -1,0 +1,62 @@
+import torch
+import torch.nn as nn
+
+from PIL import Image
+from transformers import AutoModel, AutoConfig, AutoTokenizer
+from transformers import CLIPImageProcessor
+import torch
+from llm2vec import LLM2Vec
+
+
+class LLM2CLIPTextTower(nn.Module):
+    def __init__(self):
+        super().__init__()
+
+        self.image_processor = CLIPImageProcessor.from_pretrained("/data/xmyu/Bunny_all/checkpoints/clip-vit-large-patch14-336")
+        self.vision_tower = AutoModel.from_pretrained(
+            "/data/xmyu/Bunny_all/checkpoints/LLM2CLIP-Openai-L-14-336", 
+            torch_dtype=torch.bfloat16,
+            trust_remote_code=True).to('cuda').eval()
+        
+        self.vision_tower.requires_grad_(False)
+        
+
+        self.llm_model_name = '/data/xmyu/Bunny_all/checkpoints/LLM2CLIP-Llama-3-8B-Instruct-CC-Finetuned'
+        config = AutoConfig.from_pretrained(
+            self.llm_model_name, trust_remote_code=True
+        )
+        self.llm_model = AutoModel.from_pretrained(self.llm_model_name, torch_dtype=torch.bfloat16, config=config, trust_remote_code=True)
+        self.llm2clip_tokenizer = AutoTokenizer.from_pretrained(self.llm_model_name)
+        self.llm_model.config._name_or_path = '/data/xmyu/Bunny_all/checkpoints/Meta-Llama-3-8B-Instruct' #  Workaround for LLM2VEC
+        self.l2v = LLM2Vec(self.llm_model, self.llm2clip_tokenizer, pooling_mode="mean", max_length=512, doc_max_length=512)
+
+        self.is_loaded = True
+
+    def forward(self, images):
+        if type(images) is list:
+            image_features = []
+            for image in images:
+                image_feature = self.vision_tower(image.to(device=self.device, dtype=self.dtype).unsqueeze(0),
+                                                      output_hidden_states=True)
+                image_features.append(image_feature)
+        else:
+            image_features = self.vision_tower(images.to(device=self.device, dtype=self.dtype),
+                                                   output_hidden_states=True)
+
+        return image_features
+
+    @property
+    def dummy_feature(self):
+        return torch.zeros(1, self.hidden_size, device=self.device, dtype=self.dtype)
+
+    @property
+    def dtype(self):
+        return self.vision_tower.dtype
+
+    @property
+    def device(self):
+        return self.vision_tower.device
+
+    @property
+    def hidden_size(self):
+        return 1280

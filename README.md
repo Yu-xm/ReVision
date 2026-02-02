@@ -1,4 +1,4 @@
-<h1 align="center">Modality Gap–Driven Subspace Alignment Training Paradigm <br> For Multimodal Large Language Models</h1>
+<h1 align="center">Modality Gap–Driven Subspace Alignment Training Paradigm For Multimodal Large Language Models</h1>
 
 <img src="./asset/ReAlign.png" alt="Logo">
 

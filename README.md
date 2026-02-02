@@ -132,11 +132,11 @@ After generating the initial embeddings (Step 1), use this script to align the *
 #### 1. How it Works
 The script performs a robust, multi-pass statistical alignment:
 
-1.  Global Mean:** Calculates the precise global mean of both text and image vectors (using `float64` to prevent overflow).
-2.  Trace Calculation:** Computes the variance (Trace) of both modalities to determine the scaling factor:
+1.  Global Mean: Calculates the precise global mean of both text and image vectors (using `float64` to prevent overflow).
+2.  Trace Calculation: Computes the variance (Trace) of both modalities to determine the scaling factor:
     $$Scale = \sqrt{\frac{Trace_{img}}{Trace_{txt}}}$$
-3.  Mean Correction:** Estimates the shift required to align the centers of the distributions.
-4.  Trace align:** Applies the final transformation to the text embeddings:
+3.  Mean Correction: Estimates the shift required to align the centers of the distributions.
+4.  Trace align: Applies the final transformation to the text embeddings:
     $$X_{aligned} = (X_{text} - \mu_{text}) \cdot Scale + \mu_{image}$$
 
 #### 2. Run Alignment

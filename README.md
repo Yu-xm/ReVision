@@ -125,7 +125,7 @@ The script saves features in chunked `.pkl` files (default 200k records per file
 
 ## ⚖️ Step 2: ReAlign
 
-After generating the initial embeddings (Step 1), use this script to align the **Text Embeddings** into the **Image Embedding Space**. This process reduces the modality gap using the **Trace (Variance) Matching** method.
+After generating the initial embeddings (Step 1), use this script to align the **Text Embeddings** into the **Image Embedding Space**. This process reduces the modality gap using the **ReAlign** method.
 
 #### 1. How it Works
 The script performs a robust, multi-pass statistical alignment:

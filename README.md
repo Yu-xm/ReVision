@@ -1,5 +1,11 @@
 <h1 align="center">Modality Gap–Driven Subspace Alignment Training Paradigm For Multimodal Large Language Models</h1>
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Theory-Modality_Gap-C92D39" alt="Theory">
+  <img src="https://img.shields.io/badge/Method-Modality_Alignment-C92D39" alt="Method">
+  <img src="https://img.shields.io/badge/Model-MLLMs-007EC6" alt="Model">
+</p>
+
 <img src="./asset/ReAlign.png" alt="Logo">
 
 <font size=7><div align='center' > [[📖 Paper](https://github.com/Yu-xm/ReVision.git)] [[📊 Dataset](https://github.com/Yu-xm/ReVision.git)] [[🌐 Model](https://github.com/Yu-xm/ReVision.git)] </div></font>

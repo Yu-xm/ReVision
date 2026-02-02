@@ -172,8 +172,9 @@ The script creates a `trace/` subdirectory inside your output folder.
 ```
 
 
-# Citation
-If you find this repository helpful, please cite the paper below.
+# 🖊️ Citation
+
+If you find this repository helpful, please consider citing our paper:
 
 ```bibtex
 @article{yu2025unicorn,

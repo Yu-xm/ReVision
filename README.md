@@ -14,9 +14,6 @@
 - [2025/06/10] 🔥 We release the **code** of the **Unicorn**. Try training!
 - [2025/04/15] 🔥 Release **Unicorn-1.2M** & **Unicorn-Instruction-471K** Datasets. [[HF](https://huggingface.co/datasets/Yu2020/Unicorn)]
 
-## Training
-
-**Our code is based on** [Bunny](https://github.com/BAAI-DCAI/Bunny). Thanks!
 
 # :gear: Env
 
@@ -168,6 +165,98 @@ The script creates a `trace/` subdirectory inside your output folder.
 * **Statistics:** `output/aligned_feats/trace_stats.pkl` (Contains calculated means, scale factor, and trace values for validation).
 
 > **Note:** This script only transforms the **Text** embeddings. The **Image** embeddings remain unchanged as they serve as the "anchor" distribution.
+
+Here is the **Training** section, written to perfectly match the style and context of your existing README. You can insert this section right after the **Step 2: ReAlign** section and before the **To Do** section.
+
+---
+
+这是一个更新后的 **Model Training** README 部分。
+
+根据您的指示，这部分文档现在明确指出：**不需要在命令行传递图片路径，而是通过修改 `data_utils.py` 中的变量来加载 Step 2 生成的特征数据。**
+
+---
+
+# :rocket: Model Training
+
+ReVision training is conducted using the **Aligned Features** generated in Step 2. We do **not** load raw images during training; instead, we directly ingest the pre-computed feature vectors.
+
+### 1. Data Preparation
+
+Ensure your workspace is organized with the necessary JSON annotations and the feature files generated from the ReAlign step.
+
+```text
+├── output/
+│   └── aligned_feats/trace/              # [Input] The Aligned Embeddings (.pkl files) from Step 2
+├── data/
+│   ├── recap_datacomp_1b_100k_llava_format.json  # Pretraining JSON
+│   └── llava_v1_5_mix665k.json                   # SFT JSON
+
+```
+
+### 2. Code Configuration (Crucial Step)
+
+Before running the training scripts, you **must** manually configure the data loader to point to your feature directory.
+
+1. Open the file: `bunny/util/data_utils.py`.
+2. Locate the `LazySupervisedDataset` class.
+3. Find the `folder_path` variable inside the `__init__` method.
+4. **Modify it** to point to your aligned features directory (e.g., the absolute path to `output/aligned_feats/trace`).
+
+**Example Modification in `bunny/util/data_utils.py`:**
+
+```python
+class LazySupervisedDataset(Dataset):
+    def __init__(self, data_path, tokenizer, data_args):
+        # ... (lines omitted)
+        
+        # [ACTION REQUIRED] Change this path to your Step 2 output directory
+        # folder_path = '/old/path/...'
+        folder_path = '/your/project/path/ReVision/output/aligned_feats/trace'
+        
+        # ... (The code will automatically load all .pkl files from this folder)
+
+```
+
+> **Note:** The data loader uses a dictionary to map IDs from your JSON dataset to the embeddings in the `.pkl` files. Ensure the `id` fields in your JSON match the IDs used during the Embedding Process.
+
+### 3. Stage 1: Modality Substitution Pretraining
+
+In this stage, we train the **Projector** (MLP) to align the language model with the synthetic visual embeddings.
+
+```bash
+
+```
+
+**Run the command:**
+
+```bash
+cd ReVision
+
+sh script/train/pretrain.sh
+
+```
+
+**Configuration Notes:**
+
+* `--image_folder`: This argument in the script is **ignored** (or acts as a placeholder) because the code is hardcoded to load features from `folder_path` in `data_utils.py`.
+* `--data_path`: Path to your pretraining JSON file.
+
+### 4. Stage 2:  Visual Instruction Tuning
+
+In this stage, we perform Visual Instruction Tuning on the LLM backbone.
+
+**Run the command:**
+
+```bash
+sh script/train/finetune_full.sh
+
+```
+
+**Configuration Notes:**
+
+* `--pretrain_mm_mlp_adapter`: **Must point to** the `mm_projector.bin` saved from Stage 1.
+* `--data_path`: Path to your SFT JSON file.
+* **Memory Optimization:** The script uses DeepSpeed ZeRO-3 (`zero3.json`) to handle the memory requirements of the 8B model.
 
 # 📝 To Do
 

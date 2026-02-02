@@ -172,7 +172,7 @@ The script creates a `trace/` subdirectory inside your output folder.
 ```
 
 
-## Citation
+# Citation
 If you find this repository helpful, please cite the paper below.
 
 ```bibtex
@@ -184,6 +184,6 @@ If you find this repository helpful, please cite the paper below.
 }
 ```
 
-## Contact
+# 📧 Contact
 
-If you have any questions, please contact: xmyu02@gamil.com
+If you have any questions or are interested in collaborating, please reach out: **xmyu02@gmail.com**

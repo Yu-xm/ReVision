@@ -169,8 +169,6 @@ The script creates a `trace/` subdirectory inside your output folder.
 
 > **Note:** This script only transforms the **Text** embeddings. The **Image** embeddings remain unchanged as they serve as the "anchor" distribution.
 
-```
-
 
 # 🖊️ Citation
 
@@ -183,7 +181,7 @@ If you find this repository helpful, please consider citing our paper:
   journal={arXiv preprint arXiv:2503.22655},
   year={2025}
 }
-```
+
 
 # 📧 Contact
 

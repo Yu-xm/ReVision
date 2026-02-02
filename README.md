@@ -168,17 +168,10 @@ The script creates a `trace/` subdirectory inside your output folder.
 
 Here is the **Training** section, written to perfectly match the style and context of your existing README. You can insert this section right after the **Step 2: ReAlign** section and before the **To Do** section.
 
----
-
-这是一个更新后的 **Model Training** README 部分。
-
-根据您的指示，这部分文档现在明确指出：**不需要在命令行传递图片路径，而是通过修改 `data_utils.py` 中的变量来加载 Step 2 生成的特征数据。**
-
----
 
 # :rocket: Model Training
 
-ReVision training is conducted using the **Aligned Features** generated in Step 2. We do **not** load raw images during training; instead, we directly ingest the pre-computed feature vectors.
+ReVision training is conducted using the processed embeddings Step 2.
 
 ### 1. Data Preparation
 
@@ -188,8 +181,8 @@ Ensure your workspace is organized with the necessary JSON annotations and the f
 ├── output/
 │   └── aligned_feats/trace/              # [Input] The Aligned Embeddings (.pkl files) from Step 2
 ├── data/
-│   ├── recap_datacomp_1b_100k_llava_format.json  # Pretraining JSON
-│   └── llava_v1_5_mix665k.json                   # SFT JSON
+│   ├── pretrain.json  # Pretraining JSON
+│   └── sft.json                   # SFT JSON
 
 ```
 

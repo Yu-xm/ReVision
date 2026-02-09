@@ -42,13 +42,6 @@
     <img src="https://img.shields.io/badge/🌐-Model_Zoo-blue?style=flat-square&logo=github&logoColor=white" alt="Model">
   </a>
 </p>
-
-<div align="center"> <div align="justify"> 
-<blockquote>
-ReAlign leverages the Modality Gap phenomenon within the high-dimensional hyperspherical embedding space of multimodal contrastive learning to precisely map unpaired text representations into the visual representation distribution. Within this framework, text serves a dual role: the aligned text embeddings function as pseudo-visual representations providing equivalent semantics, while the original text serves as the supervision signal for the MLLM. This modality substitution mechanism decouples the model's dependence on expensive paired data, thereby serving as an efficient scaling law strategy that can be flexibly applied across both pre-training and post-training (SFT and RL) stages. Theoretically, this paradigm is not limited to image-text pairs but can be generalized to any modalities possessing an aligned subspace.
-</blockquote>
-</div>
-</div>
 </div>
 
 <hr>
@@ -62,6 +55,14 @@ ReAlign leverages the Modality Gap phenomenon within the high-dimensional hypers
 - [2025/04/15] 🗂️ We release **Unicorn-1.2M** & **Unicorn-Instruction-471K** Datasets. [[HF](https://huggingface.co/datasets/Yu2020/Unicorn)]
 - [2025/03/28] 📝 We release the paper Unicorn. [[PAPER](https://arxiv.org/abs/2503.22655)]
 
+
+# 💡 Must Read!!!
+
+<div align="justify">
+
+ReAlign leverages the **Modality Gap** phenomenon within the high-dimensional hyperspherical embedding space of multimodal contrastive learning to precisely map unpaired text representations into the visual representation distribution. Within this framework, text serves a dual role: the transformed text embeddings function as pseudo-visual representations providing equivalent semantics, while the original text serves as the supervision signal for the MLLM. This modality substitution mechanism decouples the model's dependence on expensive paired data, thereby serving as an efficient scaling law strategy that can be seamlessly integrated throughout the entire training lifecycle (spanning Pre-training, SFT, and RL). Theoretically, this paradigm is not limited to image-text pairs but can be generalized to *any* modalities possessing an aligned subspace.
+
+</div>
 
 
 # :gear: Env

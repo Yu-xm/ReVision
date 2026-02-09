@@ -32,10 +32,10 @@
 <img src="./asset/ReAlign.png" alt="Logo" width="90%">
 
 <p align="center">
-  <a href="https://arxiv.org/abs/2503.22655">
+  <a href="https://github.com/Yu-xm/ReVision">
     <img src="https://img.shields.io/badge/📖-Paper-ff69b4?style=flat-square&logo=arxiv&logoColor=white" alt="Paper">
   </a>
-  <a href="https://huggingface.co/datasets/Yu2020/Unicorn">
+  <a href="https://github.com/Yu-xm/ReVision">
     <img src="https://img.shields.io/badge/🤗-HuggingFace_Dataset-ffbd45?style=flat-square&logo=huggingface&logoColor=white" alt="Dataset">
   </a>
   <a href="https://github.com/Yu-xm/ReVision">

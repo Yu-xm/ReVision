@@ -186,14 +186,18 @@ The script saves features in chunked `.pkl` files (default 200k records per file
 
 After generating the initial embeddings (Step 1), use this script to align the **Text Embeddings** into the **Image Embedding Space**. This process reduces the modality gap using the **ReAlign** method.
 
-#### 1. How it Works
-The script performs a robust, multi-pass statistical alignment:
+### ⚙️ How it Works: The ReAlign Strategy
 
-1.  Global Mean: Calculates the precise global mean of both text and image vectors (using `float64` to prevent overflow).
-2.  Trace Calculation: Computes the variance (Trace) of both modalities to determine the scaling factor:
+This script implements **ReAlign**, a robust, training-free statistical alignment strategy derived from our *Fixed-frame Modality Gap Theory*. It bridges the geometric misalignment between modalities by mapping text representations into the visual distribution through a precise multi-pass process:
+
+1.  **High-Precision Statistics.** Calculates the global mean vectors ($\mu$) and covariance traces for both text and image modalities. All internal computations utilize `float64` precision to prevent numerical overflow and ensure geometric accuracy.
+
+2.  **Trace Alignment.** Computes the global variance (Trace) of both modalities to determine the energy disparity. A scaling factor is derived to match the spectral energy of the text distribution to that of the images:
     $$Scale = \sqrt{\frac{Trace_{img}}{Trace_{txt}}}$$
-3.  Mean Correction: Estimates the shift required to align the centers of the distributions.
-4.  Trace align: Applies the final transformation to the text embeddings:
+
+3.  **Anchor Alignment.** Estimates the translational shift required to align the semantic centers of the two distributions, effectively eliminating the first-order modality bias.
+
+4.  **Final Align.** Applies the affine transformation to project text embeddings into the visual subspace, preserving the anisotropic geometric structure:
     $$X_{aligned} = (X_{text} - \mu_{text}) \cdot Scale + \mu_{image}$$
 
 #### 2. Run Alignment

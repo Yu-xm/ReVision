@@ -15,7 +15,7 @@
 
 <div align="center">
 
-<h1>Modality Gap–Driven Subspace Alignment Training <br> Paradigm For Multimodal Large Language Models</h1>
+# Modality Gap–Driven Subspace Alignment Training <br> Paradigm For Multimodal Large Language Models
 
 <p align="center">
   <a href="https://github.com/Yu-xm/ReVision">

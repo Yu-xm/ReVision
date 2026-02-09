@@ -1,4 +1,4 @@
-<h1 align="center">Modality Gap–Driven Subspace Alignment Training Paradigm For Multimodal Large Language Models</h1>
+<!-- <h1 align="center">Modality Gap–Driven Subspace Alignment Training Paradigm For Multimodal Large Language Models</h1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Theory-Modality_Gap-C92D39" alt="Theory">
@@ -6,10 +6,51 @@
   <img src="https://img.shields.io/badge/Model-MLLMs-007EC6" alt="Model">
 </p>
 
+
+
 <img src="./asset/ReAlign.png" alt="Logo">
 
-<font size=7><div align='center' > [[📖 Paper](https://github.com/Yu-xm/ReVision.git)] [[📊 Dataset](https://github.com/Yu-xm/ReVision.git)] [[🌐 Model](https://github.com/Yu-xm/ReVision.git)] </div></font>
+<font size=7><div align='center' > [[📖 Paper](https://github.com/Yu-xm/ReVision.git)] [[📊 Dataset](https://github.com/Yu-xm/ReVision.git)] [[🌐 Model](https://github.com/Yu-xm/ReVision.git)] </div></font> -->
 
+
+<div align="center">
+
+<h1>🚀 Modality Gap–Driven Subspace Alignment Training <br> Paradigm For Multimodal Large Language Models</h1>
+
+<p align="center">
+  <a href="https://github.com/Yu-xm/ReVision">
+    <img src="https://img.shields.io/badge/Theory-Modality_Gap-C92D39?style=for-the-badge" alt="Theory">
+  </a>
+  <a href="https://github.com/Yu-xm/ReVision">
+    <img src="https://img.shields.io/badge/Method-ReAlign-C92D39?style=for-the-badge" alt="Method">
+  </a>
+  <a href="https://github.com/Yu-xm/ReVision">
+    <img src="https://img.shields.io/badge/Model-MLLMs-007EC6?style=for-the-badge" alt="Model">
+  </a>
+</p>
+
+<img src="./asset/ReAlign.png" alt="Logo" width="90%">
+
+<p align="center">
+  <a href="https://arxiv.org/abs/2503.22655">
+    <img src="https://img.shields.io/badge/📖-Paper-ff69b4?style=flat-square&logo=arxiv&logoColor=white" alt="Paper">
+  </a>
+  <a href="https://huggingface.co/datasets/Yu2020/Unicorn">
+    <img src="https://img.shields.io/badge/🤗-HuggingFace_Dataset-ffbd45?style=flat-square&logo=huggingface&logoColor=white" alt="Dataset">
+  </a>
+  <a href="https://github.com/Yu-xm/ReVision">
+    <img src="https://img.shields.io/badge/🌐-Model_Zoo-blue?style=flat-square&logo=github&logoColor=white" alt="Model">
+  </a>
+</p>
+
+<p align="center">
+  <strong>ReVision</strong> bridges the modality gap in Multimodal LLMs via subspace alignment training.<br>
+  It enables efficient training and robust performance on vision-language tasks.
+</p>
+
+</div>
+
+<hr>
 
 # 📢 News
 

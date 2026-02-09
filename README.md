@@ -12,7 +12,6 @@
 
 <font size=7><div align='center' > [[📖 Paper](https://github.com/Yu-xm/ReVision.git)] [[📊 Dataset](https://github.com/Yu-xm/ReVision.git)] [[🌐 Model](https://github.com/Yu-xm/ReVision.git)] </div></font> -->
 
-
 <div align="center">
 
 # Modality Gap–Driven Subspace Alignment Training <br> Paradigm For Multimodal Large Language Models
@@ -48,12 +47,12 @@
 
 # 📢 News
 
-- [2026/02/02] 🏖️ **NOTE:** The author is currently on a journey and will address the To-Do items upon return.
-- [2026/02/02] ✨ We release the code of the **ReVision**. Try training!
-- [2026/01/31] 📝 We release the paper ReVision.
-- [2025/06/10] ✨ We release the code of the **Unicorn**. Try training!
-- [2025/04/15] 🗂️ We release **Unicorn-1.2M** & **Unicorn-Instruction-471K** Datasets. [[HF](https://huggingface.co/datasets/Yu2020/Unicorn)]
-- [2025/03/28] 📝 We release the paper Unicorn. [[PAPER](https://arxiv.org/abs/2503.22655)]
+- **`2026.02.02`** 🏖️ **NOTE:** The author is currently on a journey and will address the To-Do items upon return.
+- **`2026.02.02`** ✨ We release the code of the **ReVision**. Try training!
+- **`2026.01.31`** 📝 We release the paper ReVision.
+- **`2025.06.10`** ✨ We release the code of the **Unicorn**. Try training!
+- **`2025.04.15`** 🗂️ We release **Unicorn-1.2M** & **Unicorn-Instruction-471K** Datasets. [[HF](https://huggingface.co/datasets/Yu2020/Unicorn)]
+- **`2025.03.28`** 📝 We release the paper Unicorn. [[PAPER](https://arxiv.org/abs/2503.22655)]
 
 
 # 💡 Must Read!!!

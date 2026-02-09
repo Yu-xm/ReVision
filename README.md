@@ -48,7 +48,7 @@
 ReAlign leverages the Modality Gap phenomenon within the high-dimensional hyperspherical embedding space of multimodal contrastive learning to precisely map unpaired text representations into the visual representation distribution. Within this framework, text serves a dual role: the aligned text embeddings function as pseudo-visual representations providing equivalent semantics, while the original text serves as the supervision signal for the MLLM. This modality substitution mechanism decouples the model's dependence on expensive paired data, thereby serving as an efficient scaling law strategy that can be flexibly applied across both pre-training and post-training (SFT and RL) stages. Theoretically, this paradigm is not limited to image-text pairs but can be generalized to any modalities possessing an aligned subspace.
 </blockquote>
 </div>
-
+</div>
 </div>
 
 <hr>

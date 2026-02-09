@@ -186,19 +186,21 @@ The script saves features in chunked `.pkl` files (default 200k records per file
 
 After generating the initial embeddings (Step 1), use this script to align the **Text Embeddings** into the **Image Embedding Space**. This process reduces the modality gap using the **ReAlign** method.
 
-### ⚙️ How it Works: The ReAlign Strategy
+#### 1. How it Works: The ReAlign Strategy
 
-This script implements **ReAlign**, a robust, training-free statistical alignment strategy derived from our *Fixed-frame Modality Gap Theory*. It bridges the geometric misalignment between modalities by mapping text representations into the visual distribution through a precise multi-pass process:
+This script implements **ReAlign**, a robust, training-free statistical alignment strategy derived from our *Fixed-frame Modality Gap Theory*. It bridges the geometric misalignment by mapping text representations ($e_y$) into the visual distribution ($e_x$) through a precise three-stage process:
 
-1.  **High-Precision Statistics.** Calculates the global mean vectors ($\mu$) and covariance traces for both text and image modalities. All internal computations utilize `float64` precision to prevent numerical overflow and ensure geometric accuracy.
+1.  **Anchor Alignment.**
+    We first address the first-order distributional shift by eliminating the mean difference. The source embeddings are centered and then shifted to the target anchor:
+    $$\dot{e}_y = (e_y - \mu_y) + \mu_x$$
 
-2.  **Trace Alignment.** Computes the global variance (Trace) of both modalities to determine the energy disparity. A scaling factor is derived to match the spectral energy of the text distribution to that of the images:
-    $$Scale = \sqrt{\frac{Trace_{img}}{Trace_{txt}}}$$
+2.  **Trace Alignment.**
+    Next, we adjust the scale of residuals to match the global energy of the visual modality while preserving the spectral structure. A scaling factor $s$ is derived from the global trace (variance):
+    $$s = \sqrt{\frac{Trace_{img}}{Trace_{txt}}} \quad \Rightarrow \quad \tilde{e}_y = \mu_x + s(e_y - \mu_y)$$
 
-3.  **Anchor Alignment.** Estimates the translational shift required to align the semantic centers of the two distributions, effectively eliminating the first-order modality bias.
-
-4.  **Final Align.** Applies the affine transformation to project text embeddings into the visual subspace, preserving the anisotropic geometric structure:
-    $$X_{aligned} = (X_{text} - \mu_{text}) \cdot Scale + \mu_{image}$$
+3.  **Centroid Alignment (Phantom Drift Correction).**
+    While affine transformations align statistics in Euclidean space, the subsequent spherical projection induces a secondary "Phantom Drift." We perform a final centroid correction on the unit hypersphere to strictly align the angular mass centers:
+    $$e''_y = e'_y - \mu' + \mu_x$$
 
 #### 2. Run Alignment
 Execute `embed_ReAlign.py` to process the `.pkl` files generated in Step 1.

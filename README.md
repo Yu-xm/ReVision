@@ -46,10 +46,10 @@
 </div>
 
 <p align="center">
-  <a href="#-must-read">💡 Core Insight</a> •
-  <a href="#-env">🛠️ Env Installation</a> •
-  <a href="#-embedding-process">⚙️ Data Process</a> •
-  <a href="#-model-training">🚀 Training</a>
+  <a href="#core-insight">💡 Core Insight</a> •
+  <a href="#env">🛠️ Env Installation</a> •
+  <a href="#process">⚙️ Data Process</a> •
+  <a href="#training">🚀 Training</a>
 </p>
 
 <hr>
@@ -64,7 +64,7 @@
 - **`2025.03.28`** 📝 We release the paper Unicorn. [[PAPER](https://arxiv.org/abs/2503.22655)]
 
 
-# 💡 Must Read!!!
+# 💡 Must Read!!! <a id="core-insight"></a>
 
 > [!IMPORTANT]
 > **<div align="center">Core Insight</div>**
@@ -75,9 +75,7 @@
 >
 > </div>
 
-
-
-# :gear: Env
+# :gear: Env <a id="env"></a>
 
 Create a conda virtual environment and activate it:
 
@@ -101,7 +99,7 @@ Install flash-attention
   pip install flash-attn --no-build-isolation
   ```
 
-# :hammer_and_wrench: Embedding Process
+# :hammer_and_wrench: Embedding Process <a id="process"></a>
 
 ## Step 1. Data Embed
 
@@ -231,7 +229,7 @@ The script creates a `trace/` subdirectory inside your output folder.
 Here is the **Training** section, written to perfectly match the style and context of your existing README. You can insert this section right after the **Step 2: ReAlign** section and before the **To Do** section.
 
 
-# :rocket: Model Training
+# :rocket: Training <a id="training"></a>
 
 ReVision training is conducted using the processed embeddings in Step 2.
 

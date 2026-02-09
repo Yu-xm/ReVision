@@ -199,7 +199,7 @@ This script implements **ReAlign**, a robust, training-free statistical alignmen
     Next, we adjust the scale of residuals to match the global energy of the visual modality while preserving the spectral structure. A scaling factor $s$ is derived from the global trace (variance):
     $$s = \sqrt{\frac{Trace_{img}}{Trace_{txt}}} \quad \Rightarrow \quad \tilde{e}_y = \mu_x + s(e_y - \mu_y)$$
 
-3.  **Centroid Alignment (Phantom Drift Correction).**
+3.  **Centroid Alignment.**
     While affine transformations align statistics in Euclidean space, the subsequent spherical projection induces a secondary "Phantom Drift." We perform a final centroid correction on the unit hypersphere to strictly align the angular mass centers:
     $$e''_y = e'_y - \mu' + \mu_x$$
 

@@ -28,8 +28,6 @@
   </a>
 </p>
 
-<img src="./asset/ReAlign.png" alt="Logo" width="90%">
-
 <p align="center">
   <a href="https://github.com/Yu-xm/ReVision">
     <img src="https://img.shields.io/badge/📖-Paper-ff69b4?style=flat-square&logo=arxiv&logoColor=white" alt="Paper">
@@ -42,6 +40,17 @@
   </a>
 </p>
 </div>
+
+<div align="center">
+<img src="./asset/ReAlign.png" alt="Logo" width="90%">
+</div>
+
+<p align="center">
+  <a href="#-must-read">💡 Core Insight</a> •
+  <a href="#-env">🛠️ Env Installation</a> •
+  <a href="#-embedding-process">⚙️ Data Process</a> •
+  <a href="#-model-training">🚀 Training</a>
+</p>
 
 <hr>
 
@@ -324,4 +333,4 @@ If you find this repository helpful, please consider citing our paper:
 
 # 📧 Contact
 
-If you have any questions or are interested in collaborating, please reach out: **xmyu02@gmail.com**
+If you have any questions or are interested in collaborating, please reach out: **yuxm02@gmail.com**

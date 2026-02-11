@@ -328,6 +328,16 @@ sh script/train/finetune_full.sh
 If you find this repository helpful, please consider citing our paper:
 
 ```bibtex
+@misc{yu2026modalitygapdrivensubspacealignment,
+      title={Modality Gap-Driven Subspace Alignment Training Paradigm For Multimodal Large Language Models}, 
+      author={Xiaomin Yu and Yi Xin and Wenjie Zhang and Chonghan Liu and Hanzhen Zhao and Xiaoxing Hu and Xinlei Yu and Ziyue Qiao and Hao Tang and Xue Yang and Xiaobin Hu and Chengwei Qin and Hui Xiong and Yu Qiao and Shuicheng Yan},
+      year={2026},
+      eprint={2602.07026},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2602.07026}, 
+}
+
 @article{yu2025unicorn,
   title={Unicorn: Text-only data synthesis for vision language model training},
   author={Yu, Xiaomin and Ding, Pengxiang and Zhang, Wenjie and Huang, Siteng and Gao, Songyang and Qin, Chengwei and Wu, Kejian and Fan, Zhaoxin and Qiao, Ziyue and Wang, Donglin},

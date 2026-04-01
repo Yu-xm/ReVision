@@ -89,7 +89,7 @@ Basic requirements
 
   ```shell
   pip install --upgrade pip  
-  pip install transformers=4.44.0
+  pip install transformers==4.44.0
   pip install torch torchvision xformers --index-url https://download.pytorch.org/whl/cu124
   ```
 
